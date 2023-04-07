@@ -2679,3 +2679,4 @@ GENERATE_LEGEND        = YES
 # The default value is: YES.
 
 DOT_CLEANUP            = YES
+EXAMPLE_PATH   = "D:\github\ANN\src\"
