@@ -1,8 +1,7 @@
 #include <iostream>
 
-#include "test_lib.h"
-
-using namespace std;
+#include <vector>
+#include "net.h"
 
 /**
  * @file ann.cpp
@@ -17,10 +16,10 @@ using namespace std;
 
  */
 int main() {
-	cout << "hello world" << endl;
-	test_lib test = test_lib();
+	std::cout << "hello world" << std::endl;
 
-	test.foo();
+	std::vector<unsigned> topology= { 3, 2, 1 };
+	net testNet = net::net(topology);
 
 	return 0;
 }

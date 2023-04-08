@@ -1,11 +1,14 @@
 #include "gtest/gtest.h"
-#include "test_lib.h"
+#include <vector>
+#include "net.h"
 
 TEST(ExampleTests,DemonstrateGTestMacros) {
-	test_lib test = test_lib();
+	std::vector<unsigned>topology{ 3,2,1 };
+	net test = net(topology);
 
-	int wert = test.addValues(2, 2);
-	EXPECT_EQ(4, wert);
+	std::vector<double> result = std::vector<double>();
+	test.feedForward(result);
+	EXPECT_EQ(4, result.size());
 }
 
 int main(int argc, char** argv) {
