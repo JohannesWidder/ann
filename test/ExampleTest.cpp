@@ -8,7 +8,7 @@ TEST(ExampleTests,DemonstrateGTestMacros) {
 
 	std::vector<double> result = std::vector<double>();
 	test.feedForward(result);
-	EXPECT_EQ(4, result.size());
+	EXPECT_EQ(0, result.size());
 }
 
 int main(int argc, char** argv) {

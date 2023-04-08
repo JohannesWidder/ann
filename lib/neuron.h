@@ -1,5 +1,8 @@
 #pragma once
 
+#include <vector>
+#include <cstdlib>
+
 struct connection
 {
 	double weight;
@@ -10,5 +13,7 @@ class neuron {
 public:
 	neuron(unsigned numOutputs);
 private:
-	double M_outputval
+	static double randomWeight(void) { return rand() / double(RAND_MAX); }
+	// double M_outputval;
+	std::vector<connection> m_outputWeights;
 };

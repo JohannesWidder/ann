@@ -15,9 +15,9 @@ net::net(const std::vector<unsigned> &topology)
 
 	for (unsigned layerNum = 0; layerNum < numLayers; ++layerNum) {
 		m_layers.push_back(Layer());
-
+		unsigned numOutputs = layerNum == topology.size() - 1 ? 0 : topology[layerNum + 1];
 		for (unsigned neuronNum =0; neuronNum <= topology[layerNum]; ++neuronNum) {
-			m_layers.back().push_back(neuron());
+			m_layers.back().push_back(neuron(numOutputs));
 			std::cout << "Made new neuron" << std::endl;
 		}
 	}

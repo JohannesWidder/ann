@@ -2,7 +2,10 @@
 /// <summary>
 /// Klasse Neuron.
 /// </summary>
-neuron::neuron()
+neuron::neuron(unsigned numOutputs)
 {
-	return;
+	for (unsigned c = 0; c < numOutputs; ++c) {
+		m_outputWeights.push_back(connection());
+		m_outputWeights.back().weight = randomWeight();
+	}
 }
