@@ -26,11 +26,26 @@ net::net(const std::vector<unsigned> &topology)
 }
 
 /// <summary>
-/// Ermttelt aus dem Eingabevektor den Ergebnisvektor für das Lernen mit Hilfe der Backpropagation 
+/// \brief
+/// Eingabevektor durch das Netzwerk progagieren. 
+/// \details
+/// Überträgt den Eingabevektor in das Netzwerk und propagiert dann dann die Ergebnisse durch das Netzwerk
 /// </summary>
 /// <param name="inputValues"></param>
 void net::feedForward(const std::vector<double>& inputValues)
 {
+	// Assagn (latch) the input values into the input neurons
+	for (unsigned i = 0; inputValues.size(); ++i) {
+		m_layers[0][i],setOutputValue(inputValues[i])
+	}
+
+	// Forward Propagation
+	for (unsigned layerNum = 1; layerNum < m_layers[layerNum].size() - 1; ++layerNum) {
+		for (unsigned n = 0; n < m_layers[layerNum].size() - 1; ++n) {
+			m_layers[layerNum][n].feedForward();
+		}
+	}
+
 	return;
 }
 
