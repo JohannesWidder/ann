@@ -7,7 +7,7 @@ class net_test;
 
 class neuron;
 
-typedef std::vector<neuron> Layer;
+// typedef std::vector<neuron> Layer;
 
 /// <summary>
 /// Basisklasse Netzwerk
@@ -22,5 +22,5 @@ public:
 	friend class net_test;
 
 private:
-	std::vector<Layer> m_layers;
+	std::vector<neuron> m_layers;
 };

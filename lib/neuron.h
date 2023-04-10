@@ -5,8 +5,6 @@
 
 #include "net.h"
 
-typedef std::vector<neuron> Layer;
-
 struct connection
 {
 	double weight;
@@ -18,7 +16,7 @@ public:
 	neuron(unsigned numOutputs);
 	void setOutputValue(double val) { m_outputval = val; }
 	double getOutputValue() const { return(m_outputval); }
-	void feedForward(const Layer& prevLayer);
+	void feedForward(const std::vector<neuron>& prevLayer, unsigned m_myindex);
 private:
 	static double randomWeight(void) { return rand() / double(RAND_MAX); }
 	double m_outputval;

@@ -1,5 +1,3 @@
-#pragma once
-
 #include "neuron.h"
 /// <summary>
 /// Klasse Neuron.
@@ -12,11 +10,11 @@ neuron::neuron(unsigned numOutputs)
 	}
 }
 
-void neuron::feedForward(const Layer& prevLayer)
+void neuron::feedForward(const std::vector<neuron>& prevLayer, unsigned m_myindex)
 {
 	double sum = 0.0;
 
 	for (unsigned n = 0; n < prevLayer.size(); ++n) {
-		sum += prevLayer[n].getOutputVal() * prevLayer[n].m_outputWeights[m_myindex].weight;
+		sum += prevLayer[n].getOutputValue() * prevLayer[n].m_outputWeights[m_myindex].weight;
 	}
 }
