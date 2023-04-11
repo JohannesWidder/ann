@@ -1,1 +1,0 @@
-Dies sind die Anforderungen
